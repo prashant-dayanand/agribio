@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Badge } from "../shared/Badge";
-import { cn } from "../../lib/utils";
-import { Leaf, Search, Globe, ChevronRight } from "lucide-react";
-import { ApplyModal } from "../shared/ApplyModal";
+import { Globe, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Idea Scorer", href: "#idea-scorer" },
@@ -14,14 +11,14 @@ const NAV_LINKS = [
 ];
 
 export function Topbar() {
-  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <>
       <header className="sticky top-0 z-[100] h-20 border-b border-[var(--bd)] px-[clamp(1.5rem,6vw,5rem)] flex items-center justify-between shadow-sm bg-white">
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <div className="hidden sm:block">
+          <div className="hidden sm:block cursor-pointer" onClick={() => router.push("/")}>
             <p className="font-bold text-[1.2rem] tracking-tight leading-none text-green-800">
               AgriBioVentures
             </p>
@@ -49,8 +46,8 @@ export function Topbar() {
           </div>
 
           <button
-            onClick={() => setIsApplyModalOpen(true)}
-            className="flex items-center gap-2 px-7 py-3 rounded-full bg-[var(--tx)] text-white text-[0.85rem] font-bold transition-all hover:bg-[var(--gn)] hover:scale-[1.02] active:scale-[0.98]"
+            onClick={() => router.push("/apply")}
+            className="flex items-center cursor-pointer gap-2 px-7 py-3 rounded-full bg-[var(--tx)] text-white text-[0.85rem] font-bold transition-all hover:bg-[var(--gn)] hover:scale-[1.02] active:scale-[0.98]"
           >
             Apply Now
             <ChevronRight size={16} />
@@ -58,8 +55,6 @@ export function Topbar() {
         </div>
       </header>
 
-      {/* The Popup Modal */}
-      <ApplyModal isOpen={isApplyModalOpen} onClose={() => setIsApplyModalOpen(false)} />
     </>
   );
 }

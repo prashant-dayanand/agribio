@@ -129,10 +129,10 @@ function DaoFlywheel() {
           <Activity className="text-[var(--gn)]" size={20} />
           <p className="text-sm font-medium text-white/80 italic font-sans hover:text-white transition-colors">Every batch success fuels the next generation of BioTech innovation.</p>
         </div>
-        <button className="flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-[var(--tx)] text-sm font-bold transition-all hover:bg-[var(--gn)] hover:text-white shadow-sm active:scale-95">
-          Explore Tokenomics
+        <a href="https://blog.hashs.exchange/buy-hashs-with-eth/" target="_blank" className="flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-[var(--tx)] text-sm font-bold transition-all hover:bg-[var(--gn)] hover:text-white shadow-sm active:scale-95">
+          Explore $HASHS
           <ExternalLink size={16} />
-        </button>
+        </a>
       </div>
     </div>
   );

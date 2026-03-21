@@ -11,17 +11,13 @@ import { Footer } from "@/components/shared/Footer";
 export default function Home() {
   return (
     <>
-      <Topbar />
       <main>
         <Hero />
         <IdeaScorer />
-        {/* <MatrixSection /> */}
         <GrantsSection />
         <DaoSection />
         <AILabSection />
-        <FocusBreak />
       </main>
-      <Footer />
     </>
   );
 }

@@ -3,8 +3,10 @@
 import { Badge } from "./Badge";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight, FileText, ShieldCheck } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export function FocusBreak() {
+  const router = useRouter();
   return (
     <section className="section-py relative overflow-hidden bg-[var(--tx)] text-white text-center border-t border-white/5">
       {/* Immersive background visuals */}
@@ -58,6 +60,7 @@ export function FocusBreak() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => router.push("/apply")}
             className="flex items-center gap-4 px-8 py-4 rounded-full bg-white text-[var(--tx)] text-[1rem] font-bold shadow-2xl shadow-white/5 hover:bg-white/95 transition-all"
           >
             Start My Application

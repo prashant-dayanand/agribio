@@ -1,9 +1,8 @@
 "use client";
 
 import { Badge } from "../shared/Badge";
-import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
-import { Microscope, Beaker, ShieldCheck, Zap, BarChart3, Rocket, ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const PROMISE_LEFT = [
   { icon: "🌾", title: "Agritech R&D", desc: "crop genomics, precision farming, sensor technology, yield intelligence" },
@@ -18,6 +17,7 @@ const PROMISE_RIGHT = [
 ];
 
 export function Hero() {
+  const router = useRouter();
   return (
     <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-20 bg-white border-b border-[var(--bd)]">
       {/* Background Decor */}
@@ -50,8 +50,8 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <button className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--gn)] text-white text-base font-bold transition-all hover:bg-[var(--g2)] hover:-translate-y-0.5 shadow-sm hover:shadow-lg hover:shadow-[var(--gn)]/20">
-                Apply to Batch 4 →
+              <button onClick={() => router.push("/apply")} className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--gn)] text-white text-base font-bold transition-all cursor-pointer hover:-translate-y-0.5 shadow-sm hover:shadow-lg hover:shadow-[var(--gn)]/20">
+                Apply
               </button>
             </div>
           </motion.div>
